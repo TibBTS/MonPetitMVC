@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Model\GestionClientModel;
 use ReflectionClass;
 use App\Exceptions\AppException;
+use Tools\MyTwig;
 
 class GestionClientController {
     public function chercheUn(array $params) {
@@ -12,7 +13,7 @@ class GestionClientController {
         $unClient = $model->find($id);
         if ($unClient) {
             $r = new ReflectionClass($this);
-            include_once PATH_VIEW . str_replace('Controller','View', $r->getShortName()). '/unClient.php';
+            include_once PATH_VIEW . str_replace('Controller','View', $r->getShortName()). '/unClient.html.twig';
         } else {
             throw new AppException("Client" . $id . "inconnu");
         }
