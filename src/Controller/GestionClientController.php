@@ -25,7 +25,9 @@ class GestionClientController {
         $clients = $model->findAll();
         if ($clients) {
             $r = new ReflectionClass($this);
-            include_once PATH_VIEW . str_replace('Controller','View', $r->getShortName()). '/plusieursClients.php';
+            //include_once PATH_VIEW . str_replace('Controller','View', $r->getShortName()). '/plusieursClients.php';
+            $vue = str_replace('Controller','View', $r->getShortName()). '/plusieursClients.html.twig';
+            MyTwig::afficheVue($vue ,array('Clients' => $clients));
         } else {
             throw new AppException("Aucun client à afficher");
         }
