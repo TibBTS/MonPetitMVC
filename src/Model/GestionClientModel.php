@@ -32,6 +32,28 @@ class GestionClientModel {
         $lignes = $unObjetPdo->query($sql);
         return $lignes->fetchAll(PDO::FETCH_CLASS, Client:: class);
     }
+    
+    
+    public function enregistreClient(Client $client) {
+        try {
+        $unobjetPdo = Connexion::getConnexion();
+        $sql= "insert into client (titreCli, nomCli, prenomCli, adresseRuelCli, adresseRue2Cli, cpCli, villeCli, telCli)" 
+                . "values (:titreCli, :nonCli, :prenonCli, :adresseRuelCli, :adresseRue2Cli, :cpCli, :villeCli, :telCli)";
+        $s= $unObjetPdo->prepare($sql);
+        $s->bindValue(":titreCli", $client->getTitreCli(), FDO::PARAM_STR); 
+        $s->bindValue(":nonCli", $client->getNomC1i(), PDO::PARAM_STR);
+        $s->bindValue(':prenonCli', $client->getPrenomCli(), PDO::PARAM_STR);
+        $s->bindValue (":adresseRuelCli", $client->getAdresseRuelcli(), PDO::PARAM_STR);
+        $s->bindValue(":adresseRue2Cli", ($client->getAdresseRue2Cli()=="") ? (null): ($client->getAdresseRue2Cli()), PDO::PARAM_STR);
+        $s->bindValue(':cpCli', $client->getCpCli(), PDO::PARAM_STR);
+        $s->bindValue(":villeCli'", $client->getVillecli(), PDO::PARAM_STR);
+        $s->bindValue(":telCli", $client->getTelCli(), PDO::PARAM_STR);
+        $s->execute();
+        }catch (PDOException) {
+            throw new AppException("Erreur technique inattendue");
+
+        }
+    }
 
 }
 
