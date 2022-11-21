@@ -38,6 +38,15 @@ class GestionClientController {
        MyTwig::afficheVue($vue,array());
     }
     
-    public 
+    public function enregistrerClient (array $params){
+        try {
+            $client = new Client($params);
+            $model = new GestionClientModel();
+            $model->enregisteClient($client);
+        } catch (Exception) {
+            throw new AppException("Erreur de l'enregistrement");
+        }
+    }
+        
     
 }
