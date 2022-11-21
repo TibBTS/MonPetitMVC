@@ -43,10 +43,10 @@ class GestionClientModel {
         $s->bindValue(":titreCli", $client->getTitreCli(), FDO::PARAM_STR); 
         $s->bindValue(":nonCli", $client->getNomC1i(), PDO::PARAM_STR);
         $s->bindValue(':prenonCli', $client->getPrenomCli(), PDO::PARAM_STR);
-        $s->bindValue (":adresseRuelCli", $client->getAdresseRuelcli(), PDO::PARAM_STR);
+        $s->bindValue (":adresseRuelCli", $client->getAdresseRuelCli(), PDO::PARAM_STR);
         $s->bindValue(":adresseRue2Cli", ($client->getAdresseRue2Cli()=="") ? (null): ($client->getAdresseRue2Cli()), PDO::PARAM_STR);
         $s->bindValue(':cpCli', $client->getCpCli(), PDO::PARAM_STR);
-        $s->bindValue(":villeCli'", $client->getVillecli(), PDO::PARAM_STR);
+        $s->bindValue(":villeCli'", $client->getVilleCli(), PDO::PARAM_STR);
         $s->bindValue(":telCli", $client->getTelCli(), PDO::PARAM_STR);
         $s->execute();
         }catch (PDOException) {
