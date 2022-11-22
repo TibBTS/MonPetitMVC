@@ -23,14 +23,14 @@ class Commande {
         if (!is_null($params)) {
             foreach ($params as $cle => $valeur) {
                 if (strlen($valeur) > 0) {
-                        $this->$cle = $valeur;                    
+                        $this->$cle = $valeur;
                 } else {
                     $this->$cle = null;
                 }
             }
         }
     }
-    
+
 //    public function __set($attribute, $value):void{
 //        if($attribute=="dateCde"){
 //            $this->dateCommande= new DateTime($value);
@@ -52,7 +52,7 @@ class Commande {
 
     function getIdClient() :int {
         return $this->idClient;    }
-        
+
     public function setNoFacture(?int $noFacture): void {
         $this->noFacture = $noFacture;
     }

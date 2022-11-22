@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 {% block contenu %}
-    <p> <h2> Informations du client numéro {{ unClient.getId () }}</h2></p> 
-    <p>{{ unClient.getPrenomCli() }} {{ unClient.getNomCli() }}</p> 
+    <p> <h2> Informations du client numéro {{ unClient.getId () }}</h2></p>
+    <p>{{ unClient.getPrenomCli() }} {{ unClient.getNomCli() }}</p>
     <p> {{ unClient.getAdresseRuelCli() }}
     {% if unClient.getAdresseRue2cli () %}
         <p> {{ unClient.getAdresseRue2cli () }}</p>

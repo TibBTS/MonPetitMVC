@@ -11,9 +11,9 @@ use Exception;
 
 class AppException extends Exception {
 
-// nom de l'utilisateur de l'aplication 
-    const NOMUSERCONNECTE = APP_USER; 
-// nom de l'application const 
+// nom de l'utilisateur de l'aplication
+    const NOMUSERCONNECTE = APP_USER;
+// nom de l'application const
     const NOMAPPLICATION = APP_NAME;
 
     public function _construct(string $message) {

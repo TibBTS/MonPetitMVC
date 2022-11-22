@@ -18,7 +18,6 @@ class Connexion {
             $options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
             $options[PDO::MYSQL_ATTR_INIT_COMMAND] = "SET NAMES utf8";
             self::$connexion = new PDO($connect_str, $connect_user, $connect_pass, $options);
-            
         } catch (PDOException $e) {
             throw new AppException('Erreur à la connexion <br>' . $e->getMessage());
         }

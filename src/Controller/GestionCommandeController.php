@@ -24,7 +24,7 @@ class GestionCommandeController {
             throw new AppException("Commande " . $id . " inconnu");
         }
     }
-    
+
     public function chercheToutes() {
         // appel de la méthode findAll() de la classe Model adequate
         $modele = new GestionCommandeModel();

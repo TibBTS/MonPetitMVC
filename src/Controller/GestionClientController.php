@@ -32,12 +32,12 @@ class GestionClientController {
             throw new AppException("Aucun client à afficher");
         }
     }
-    
+
     public function creerClient(array $params){
        $vue = "GestionClientView\\creerClient.html.twig";
        MyTwig::afficheVue($vue,array());
     }
-    
+
     public function enregistrerClient (array $params){
         try {
             $client = new Client($params);
@@ -47,6 +47,6 @@ class GestionClientController {
             throw new AppException("Erreur de l'enregistrement");
         }
     }
-        
-    
+
+
 }

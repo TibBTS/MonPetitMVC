@@ -1,6 +1,6 @@
 {% extends "layout.html.twig" %}
 {% block contenu %}
-    <p><h2> Liste des clients</h2></p> 
+    <p><h2> Liste des clients</h2></p>
     <table>
   <tr>
     <td>id</td>
@@ -14,7 +14,7 @@
     <td>tel</td>
   </tr>
   {% for unClient in Clients %}
-  <tr>    
+  <tr>
     <td>{{ unClient.getId () }}</td>
     <td>{{ unClient.getTitreCli () }}</td>
     <td>{{ unClient.getNomCli () }}</td>

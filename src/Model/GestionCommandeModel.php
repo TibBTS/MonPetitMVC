@@ -9,7 +9,7 @@ use Exception;
 use App\Exceptions\AppException;
 
 class GestionCommandeModel {
-    
+
     public function find(int $id): Commande {
         try {
             $unObjetPdo = Connexion::getConnexion();
@@ -22,7 +22,7 @@ class GestionCommandeModel {
             throw new AppException("Erreur technique inattendue");
         }
     }
-    
+
     public function findAll(): array {
         $unObjetPdo = Connexion::getConnexion();
         $sql = "select * from COMMANDE";
