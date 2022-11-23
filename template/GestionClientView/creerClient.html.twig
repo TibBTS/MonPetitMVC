@@ -3,10 +3,10 @@
 
     <div class="container">
     <h2>Nouveau client </h2>
-    <form action="index.php?c=GestionClientia enregistreClient" method="post">
+    <form action="index.php?c=GestionClient&a=enregistreClient" method="post">
         <div class="form-group">
             <label for="titre">Titre</label>
-            <select class="form-control" id="titre" name="titrecli" required>
+            <select class="form-control" id="titre" name="titreCli" required>
                 <option>Choisir...</option>
                 <option>Monsieur</option>
                 <option>Madame</option>
@@ -15,13 +15,18 @@
         </div>
         <div class="form-group">
             <label for="nom">Nom:</label>
-            <input type="text" class="form-control" id="nom" placeholder="No" name="nonCli" value="Roche required">
+            <input type="text" class="form-control" id="nom" placeholder="No" name="nonCli" value="Roche" required">
             <label for="prenon">Prénom :</label>
-            <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenomcl1" value="Benoit required> <label for="adressel">Adresse :</label>
-            <input type="text" class="form-control" id="prenom" placeholder="Adresse" name="adresse Ruelcl1" value="Les Lauriers required> <label for="adresse2">Complément d'adresse :</label>
-            <input type="text" class="form-control" id="adresse2" placeholder Complément d'adresse (facultatif)" name="adresseRue 2011" value="Avenue W. Churchill"> <label for="cp">Code postal 1</label>
-            <input type="text" class="form-control" id="cp" placeholder Code postal" name="opcl1" value="83000 required> <label forville">Ville </label>
-            <input type="text" class="form-control" id="ville" placeholder="Ville" name="villeCli value "Toulon" required> <label for="tel">Ville :</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenomcl1" value="Benoit" required">
+            <label for="adressel">Adresse :</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Adresse" name="adresse Ruelcl1" value="Les Lauriers" required"> 
+            <label for="adresse2">Complément d'adresse :</label>
+            <input type="text" class="form-control" id="adresse2" placeholder Complément d'adresse (facultatif)" name="adresseRue 2011" value="Avenue W. Churchill"> 
+            <label for="cp">Code postal 1</label>
+            <input type="text" class="form-control" id="cp" placeholder Code postal" name="opcl1" value="83000"required> 
+            <label for="ville">Ville </label>
+            <input type="text" class="form-control" id="ville" placeholder="Ville" name="villeCli" value= "Toulon" required> 
+            <label for="tel">Ville :</label>
             <input type="tel" class="form-control" id="tel" placeholder="tel" name="telli" value="0404040404">
         </div>
         <button type="submit" class="btn btn-default">Créer</button>

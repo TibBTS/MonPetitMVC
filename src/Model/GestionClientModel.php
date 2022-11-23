@@ -43,7 +43,7 @@ class GestionClientModel {
         $s->bindValue(":titreCli", $client->getTitreCli(), FDO::PARAM_STR);
         $s->bindValue(":nonCli", $client->getNomC1i(), PDO::PARAM_STR);
         $s->bindValue(':prenonCli', $client->getPrenomCli(), PDO::PARAM_STR);
-        $s->bindValue (":adresseRuelCli", $client->getAdresseRuelCli(), PDO::PARAM_STR);
+        $s->bindValue(":adresseRuelCli", $client->getAdresseRue1Cli(), PDO::PARAM_STR);
         $s->bindValue(":adresseRue2Cli", ($client->getAdresseRue2Cli()=="") ? (null): ($client->getAdresseRue2Cli()), PDO::PARAM_STR);
         $s->bindValue(':cpCli', $client->getCpCli(), PDO::PARAM_STR);
         $s->bindValue(":villeCli'", $client->getVilleCli(), PDO::PARAM_STR);
@@ -54,6 +54,27 @@ class GestionClientModel {
 
         }
     }
+    
+    public function findIds () {
+        try {
+        $unobjetPdo=Connexion::getConnexion();
+        $sql = "select id from CLIENT";
+        $lignes = $unobjetPdo->query($sql);
+        // on va configurer le mode objet pour la lisibilité du code 
+        if ($lignes->rowCount() > 0) {
+            //$lignes->setFetchMode();
+            $t = $lignes->fetchAll (PDO::FETCH_ASSOC);
+            return $t;
+        } else {
+            throw new AppException ('Aucun client trouvé');
+        }
+        } catch (PDOException) {
+            throw new AppException ("Erreur technique inattendue");
+        }
+        
+    }
+
+
 
 }
 
