@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace App\Controller;
 use App\Model\GestionClientModel;
+use App\Entity\Client;
 use ReflectionClass;
 use App\Exceptions\AppException;
 use Tools\MyTwig;
@@ -50,11 +51,11 @@ class GestionClientController {
        MyTwig::afficheVue($vue,array());
     }
 
-    public function enregistrerClient (array $params){
+    public function enregistreClient (array $params){
         try {
             $client = new Client($params);
             $model = new GestionClientModel();
-            $model->enregisteClient($client);
+            $model->enregistreClient($client);
         } catch (Exception) {
             throw new AppException("Erreur de l'enregistrement");
         }
