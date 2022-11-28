@@ -35,6 +35,31 @@ use Tools\Connexion;
         $objets= $lignes->fetchAll();
         return $objets;
         }
+        
+        public function insert (object $objet): void { 
+        $attributs = (array) $objet; 
+        array_shift ($attributs);
+        $colonnes="(";
+        $colonnesParams = "(";
+        $parametres = array();
+        foreach ($attributs as $cle => $valeur) {
+            $cle = str_replace("\0", "", $cle);
+            $c= str_replace ($this->classeNameLong, "" ,$cle);
+            $p = ":" . $c;
+            if ($c != "id") {
+                $colonnes .= $c. " ,";
+                $colonnesParams.="? ,";
+                $parametres[] = $valeur;
+            }
+        }
+        $cols= substr($colonnes, 0, -1);
+        $colsParams = substr($colonnesParams, 0, -1);
+        $sql = "insert into " . $this->table . " " . $cols . ") values " . $colsParams . ")";
+        $unObjetPDO = Connexion::getConnexion();
+        $req=$unObjetPDO->prepare($sql);
+        $req->execute($parametres);
+        }
+
 
 
     }

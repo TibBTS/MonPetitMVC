@@ -48,10 +48,25 @@ class GestionClientController {
         }
     }
 
-    public function creerClient(array $params){
-       $vue = "GestionClientView\\creerClient.html.twig";
-       MyTwig::afficheVue($vue,array());
-    }
+   public function creerClient (array $params): void { 
+       if (empty($params)) {
+            $vue = "GestionClientView\\creerClient.html.twig";
+            MyTwig:: afficheVue ($vue, array());
+        } else {
+            try {
+                $params = $this->verificationSaisieClient($params);
+                // création de l'objet client à partir des données du formulaire 
+                $client = new Client ($params);
+                $repository = Repository::getRepository ("App\Entity\Client"); 
+                $repository->insert($client);
+                $this->chercheTous();
+            } catch (Exception) {
+                throw new AppException("Erreur à l'enregistrement d'un nouveau client");
+            }
+        }
+   }
+
+
 
     public function enregistreClient (array $params){
         try {
