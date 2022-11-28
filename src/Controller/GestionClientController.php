@@ -78,5 +78,16 @@ class GestionClientController {
         }
     }
 
+        
+    public function chercheUnAjax ($params): void {
+        $repository = Repository::getRepository ("APP\Entity\Client"); 
+        $ids = $repository->findIds();
+        $params['lesId'] = $ids;
+        $r = new ReflectionClass ($this);
+        $vue = str_replace('Controller', 'View', $r->getShortName()) .  "/unClientAjax.html.twig";
+        MyTwig::afficheVue ($vue, $params);
+       
+    }
+
 
 }
