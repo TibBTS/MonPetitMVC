@@ -6,6 +6,7 @@ use App\Entity\Client;
 use ReflectionClass;
 use App\Exceptions\AppException;
 use Tools\MyTwig;
+use Tools\Repository;
 
 class GestionClientController {
    
@@ -34,8 +35,9 @@ class GestionClientController {
 
 
     public function chercheTous(){
-        $model = new GestionClientModel();
-        $clients = $model->findAll();
+        //$model = new GestionClientModel();
+        $repository = Repository::getRepository('App\Entity\Client');
+        $clients = $repository->findAll();
         if ($clients) {
             $r = new ReflectionClass($this);
             //include_once PATH_VIEW . str_replace('Controller','View', $r->getShortName()). '/plusieursClients.php';

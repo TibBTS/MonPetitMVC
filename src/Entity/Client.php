@@ -9,7 +9,7 @@ class Client {
     private  string $nomCli;
     private  string $prenomCli;
     private  string $adresseRue1Cli;
-    private  string $adresseRue2Cli;
+    private  ?string $adresseRue2Cli;
     private  string $cpCli;
     private  string $villeCli;
     private  string $telCli;

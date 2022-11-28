@@ -1,5 +1,6 @@
 <?php
 use App\Exceptions\AppException;
+use Tools\MyTwig;
 
 define('DS', DIRECTORY_SEPARATOR);
 define('RACINE', new DirectoryIterator(dirname(__FILE__)) . DS . ".." . DS);
@@ -22,11 +23,23 @@ try {
         throw new Error("Le contrôleur demandé n'existe pas");
     }
 } catch (Error $ex) {
-   include(PATH_VIEW . '/errors/error.html');
+    $error['message'] = $ex->getMessage();    
+    $error['mode'] = MODE_DEV;  
+    //include(PATH_VIEW. 'errors/error.html.twig');
+    $vue = 'errors\\error.html.twig';
+    MyTwig::afficheVue($vue, array('desErreurs' => $error['message'], 'etatDebug' => $error['mode']));
 } catch (AppException $ex) {
-    include(PATH_VIEW . '/errors/error.html');
+    $error['message'] = $ex->getMessage();
+     $error['mode'] = MODE_DEV;  
+     // include(PATH_VIEW. 'errors/error.html.twig');
+     $vue = 'errors\\error.html.twig';
+    MyTwig::afficheVue($vue, array('desErreurs' => $error['message'], 'etatDebug' => $error['mode']));  
 } catch (Exception $ex) {
-     include(PATH_VIEW . '/errors/error.html');
+    $error['message'] = $ex->getMessage();
+    $error['mode'] = MODE_DEV;  
+    //include(PATH_VIEW. 'errors/error.html.twig');
+    $vue = 'errors\\error.html.twig';
+    MyTwig::afficheVue($vue, array('desErreurs' => $error['message'], 'etatDebug' => $error['mode']));
 }
 
 

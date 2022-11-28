@@ -1,7 +1,10 @@
 <?php
+declare (strict_types=1); 
+namespace App\Repository;
 
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
+use Tools\Repository;
 
+
+class ClientRepository extends Repository{
+    
+}
