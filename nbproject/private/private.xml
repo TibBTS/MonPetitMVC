@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/src/Exceptions/AppException.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/src/Model/GestionCommandeModel.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/public/index.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/config/define.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/src/Model/GestionClientModel.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/template/errors/error.html.twig</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/config/config.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/includes/parametres.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/src/Controller/GestionClientController.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/src/Entity/Client.php</file>
-            <file>file:/C:/Users/thibaud.brouillet/Desktop/MonPetitMVC/tools/Connexion.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
